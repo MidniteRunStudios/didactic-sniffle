@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://btsmhn1hs2etm"]
+
+[ext_resource type="Script" path="res://scenes/component/health/hitbox_component.gd" id="1_uek7r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1l4jq"]
+size = Vector2(30, 30)
+
+[node name="HitboxComponent" type="Area2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_uek7r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(15, 0)
+shape = SubResource("RectangleShape2D_1l4jq")
+disabled = true
