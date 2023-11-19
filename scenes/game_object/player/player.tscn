@@ -1,32 +1,51 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgn1gtfb0023s"]
+[gd_scene load_steps=8 format=3 uid="uid://cgn1gtfb0023s"]
 
 [ext_resource type="Texture2D" uid="uid://o8s0xr8pxfn2" path="res://scenes/game_object/player/player.png" id="1_52vh5"]
 [ext_resource type="Script" path="res://scenes/game_object/player/player.gd" id="1_tvce7"]
+[ext_resource type="PackedScene" uid="uid://mqdpm46s6olk" path="res://scenes/component/health/health_component.tscn" id="2_kdt4q"]
 [ext_resource type="PackedScene" uid="uid://dx3jdxab4k7ga" path="res://scenes/ability/sword_ability_controller/sword_ability_controller.tscn" id="2_qf1a7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ucd57"]
 radius = 32.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_mw637"]
+radius = 7.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_bg30e"]
 radius = 5.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
-collision_layer = 8
-collision_mask = 9
+collision_layer = 0
 motion_mode = 1
 script = ExtResource("1_tvce7")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_kdt4q")]
 
 [node name="AbilityManager" type="Node" parent="."]
 
 [node name="SwordAbilityController" parent="AbilityManager" instance=ExtResource("2_qf1a7")]
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="DamageIntervalTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="PickupArea2D" type="Area2D" parent="."]
 position = Vector2(0, -6)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea2D"]
 shape = SubResource("CircleShape2D_ucd57")
+
+[node name="CollisionArea2D" type="Area2D" parent="."]
+position = Vector2(0, -7)
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea2D"]
+light_mask = 0
+visibility_layer = 8
+shape = SubResource("CircleShape2D_mw637")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_52vh5")
