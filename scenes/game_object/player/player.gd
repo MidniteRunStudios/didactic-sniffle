@@ -4,6 +4,8 @@ extends CharacterBody2D
 @onready var health_component = $HealthComponent
 @onready var health_bar = $HealthBar
 @onready var abilities = $Abilities
+@onready var animation_player = $AnimationPlayer
+@onready var visual_node = $Visuals
 
 const ACCELERATION_SMOOTHING = 25
 const MAX_SPEED = 125
@@ -26,6 +28,17 @@ func _process(delta):
 	velocity = velocity.lerp(target_velocity, 1 - exp(-delta * ACCELERATION_SMOOTHING))
 	#processes velocity
 	move_and_slide()
+	
+	if movement_vector.x != 0 || movement_vector.y !=0:
+		animation_player.play("walk")
+	else:
+		animation_player.play("RESET")
+	
+	var move_sign = sign(movement_vector.x)
+	if move_sign == 0 || move_sign == 1:
+		visual_node.scale = Vector2.ONE
+	if move_sign == - 1:
+		visual_node.scale = Vector2(move_sign, 1)
 
 # AN: Find the difference of X and Y coordinates from user unput
 func get_movement_vector():
