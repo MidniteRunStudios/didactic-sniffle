@@ -35,9 +35,7 @@ func _process(delta):
 		animation_player.play("RESET")
 	
 	var move_sign = sign(movement_vector.x)
-	if move_sign == 0 || move_sign == 1:
-		visual_node.scale = Vector2.ONE
-	if move_sign == - 1:
+	if move_sign != 0:
 		visual_node.scale = Vector2(move_sign, 1)
 
 # AN: Find the difference of X and Y coordinates from user unput
