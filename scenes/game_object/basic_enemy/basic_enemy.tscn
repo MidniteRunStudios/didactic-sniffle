@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bnquh01njm0so"]
+[gd_scene load_steps=13 format=3 uid="uid://bnquh01njm0so"]
 
 [ext_resource type="Script" path="res://scenes/game_object/basic_enemy/basic_enemy.gd" id="1_yqtwr"]
 [ext_resource type="Texture2D" uid="uid://cd4x7qvt0uv1v" path="res://scenes/game_object/basic_enemy/basic_enemy.png" id="2_5x6d0"]
@@ -6,13 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://uypncxu55bvv" path="res://scenes/component/health/vial_drop_component.tscn" id="3_wpkls"]
 [ext_resource type="PackedScene" uid="uid://dlqoebgln1oti" path="res://scenes/component/death/death_component.tscn" id="4_f2yka"]
 [ext_resource type="PackedScene" uid="uid://0mw1cvk2f8ry" path="res://scenes/component/health/hurt_box_component.tscn" id="4_jq7fo"]
+[ext_resource type="PackedScene" uid="uid://dfogvxhnarsdp" path="res://scenes/component/velocity/velocity_component.tscn" id="5_lf5ao"]
 
 [sub_resource type="Animation" id="Animation_fv3mb"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node2D/Sprite2D:position")
+tracks/0/path = NodePath("Visuals/Sprite2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -24,7 +25,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node2D/Sprite2D:rotation")
+tracks/1/path = NodePath("Visuals/Sprite2D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -41,7 +42,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node2D/Sprite2D:position")
+tracks/0/path = NodePath("Visuals/Sprite2D:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -53,7 +54,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node2D/Sprite2D:rotation")
+tracks/1/path = NodePath("Visuals/Sprite2D:rotation")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -82,6 +83,7 @@ motion_mode = 1
 script = ExtResource("1_yqtwr")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "walk"
 libraries = {
 "": SubResource("AnimationLibrary_ppaun")
 }
@@ -89,11 +91,14 @@ libraries = {
 [node name="HealthComponent" parent="." instance=ExtResource("2_tpylg")]
 
 [node name="VialDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_wpkls")]
+drop_percent = 0.35
 health_component = NodePath("../HealthComponent")
 
 [node name="DeathComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("4_f2yka")]
 health_component = NodePath("../HealthComponent")
-sprite = NodePath("../Node2D/Sprite2D")
+sprite = NodePath("../Visuals/Sprite2D")
+
+[node name="VelocityComponent" parent="." instance=ExtResource("5_lf5ao")]
 
 [node name="HurtBoxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_jq7fo")]
 health_component = NodePath("../HealthComponent")
@@ -104,9 +109,9 @@ visibility_layer = 4
 position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_r7of5")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Visuals" type="Node2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Visuals"]
 texture = ExtResource("2_5x6d0")
 offset = Vector2(0, -2.38)
 
