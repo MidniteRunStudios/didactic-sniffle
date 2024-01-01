@@ -6,13 +6,13 @@ extends CharacterBody2D
 @onready var abilities = $Abilities
 @onready var animation_player = $AnimationPlayer
 @onready var visual_node = $Visuals
+@onready var velocity_component = $VelocityComponent
 
-const ACCELERATION_SMOOTHING = 25
-const MAX_SPEED = 125
 
 var number_colliding_bodies = 0
-
+var base_speed = 0
 func _ready():
+	base_speed = velocity_component.max_speed
 	$CollisionArea2D.body_entered.connect(on_body_entered)
 	$CollisionArea2D.body_exited.connect(on_body_exited)
 	damage_interval_timer.timeout.connect(on_damage_interval_timer_timeout)
@@ -24,10 +24,8 @@ func _process(delta):
 	var movement_vector = get_movement_vector()
 	# normalize vector to fix diagonal issues causing vectors to exceed 1.
 	var direction = movement_vector.normalized()
-	var target_velocity = direction * MAX_SPEED
-	velocity = velocity.lerp(target_velocity, 1 - exp(-delta * ACCELERATION_SMOOTHING))
-	#processes velocity
-	move_and_slide()
+	velocity_component.accelerate_in_direction(direction)
+	velocity_component.move(self)
 	
 	if movement_vector.x != 0 || movement_vector.y !=0:
 		animation_player.play("walk")
@@ -67,8 +65,9 @@ func on_damage_interval_timer_timeout():
 func on_health_changed():
 	update_health_display()
 
-func on_ability_upgrade_added(ability_upgrade: AbilityUpgrade, _current_upgrades: Dictionary):
-	if not ability_upgrade is Ability:
-		return
-	var ability = ability_upgrade as Ability
-	abilities.add_child(ability.ability_controller_scene.instantiate())
+func on_ability_upgrade_added(ability_upgrade: AbilityUpgrade, current_upgrades: Dictionary):
+	if ability_upgrade is Ability:
+		var ability = ability_upgrade as Ability
+		abilities.add_child(ability.ability_controller_scene.instantiate())
+	elif ability_upgrade.id == "player_speed":
+		velocity_component.max_speed = base_speed + (base_speed * current_upgrades["player_speed"]["quantity"] * .2)
