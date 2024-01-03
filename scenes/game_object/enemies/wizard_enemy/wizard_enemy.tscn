@@ -1,14 +1,20 @@
-[gd_scene load_steps=16 format=3 uid="uid://bflta5h3dukcd"]
+[gd_scene load_steps=22 format=3 uid="uid://bflta5h3dukcd"]
 
 [ext_resource type="Script" path="res://scenes/game_object/enemies/wizard_enemy/wizard_enemy.gd" id="1_vligd"]
 [ext_resource type="PackedScene" uid="uid://mqdpm46s6olk" path="res://scenes/component/health/health_component.tscn" id="2_1pyyc"]
 [ext_resource type="PackedScene" uid="uid://uypncxu55bvv" path="res://scenes/component/health/vial_drop_component.tscn" id="3_eyv8v"]
 [ext_resource type="PackedScene" uid="uid://dfogvxhnarsdp" path="res://scenes/component/velocity/velocity_component.tscn" id="4_pxd30"]
 [ext_resource type="PackedScene" uid="uid://dlqoebgln1oti" path="res://scenes/component/death/death_component.tscn" id="5_alr7r"]
+[ext_resource type="PackedScene" uid="uid://c2wb2063q6se8" path="res://scenes/component/random_audio/random_audio_stream_player_2d_component.tscn" id="6_6l1wp"]
 [ext_resource type="Texture2D" uid="uid://c8p3w3yt4gtf" path="res://scenes/game_object/enemies/wizard_enemy/wizard_enemy.png" id="6_mcjsx"]
 [ext_resource type="PackedScene" uid="uid://boc2f4idbhbls" path="res://scenes/component/hit_flash/hit_flash_component.tscn" id="6_s7a3t"]
 [ext_resource type="PackedScene" uid="uid://0mw1cvk2f8ry" path="res://scenes/component/health/hurt_box_component.tscn" id="7_dm1rl"]
+[ext_resource type="AudioStream" uid="uid://6i0ilgva85b2" path="res://assets/audio/footstep_carpet_000.ogg" id="7_q5x1h"]
 [ext_resource type="Shader" path="res://scenes/component/hit_flash/hit_flash_component.gdshader" id="7_r8ptk"]
+[ext_resource type="AudioStream" uid="uid://cgbc03ahhx6lp" path="res://assets/audio/footstep_carpet_001.ogg" id="8_c2dct"]
+[ext_resource type="AudioStream" uid="uid://bvqyfx7nw37if" path="res://assets/audio/footstep_carpet_002.ogg" id="9_cbhl0"]
+[ext_resource type="AudioStream" uid="uid://beui3fnfk74es" path="res://assets/audio/footstep_carpet_003.ogg" id="10_1bihu"]
+[ext_resource type="AudioStream" uid="uid://bqb77152ti1wd" path="res://assets/audio/footstep_carpet_004.ogg" id="11_rjbyx"]
 
 [sub_resource type="Animation" id="Animation_66gob"]
 length = 0.001
@@ -114,7 +120,7 @@ _data = {
 "walk": SubResource("Animation_qjig5")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4h56e"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_be2ip"]
 resource_local_to_scene = true
 shader = ExtResource("7_r8ptk")
 shader_parameter/lerp_percent = 0.0
@@ -150,10 +156,14 @@ accelaration = 20.0
 health_component = NodePath("../HealthComponent")
 sprite = NodePath("../Visuals/Sprite2D")
 
+[node name="HitRandomAudioPlayer" parent="." instance=ExtResource("6_6l1wp")]
+max_distance = 300.0
+streams = Array[AudioStream]([ExtResource("7_q5x1h"), ExtResource("8_c2dct"), ExtResource("9_cbhl0"), ExtResource("10_1bihu"), ExtResource("11_rjbyx")])
+
 [node name="HitFlashComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("6_s7a3t")]
 health_component = NodePath("../HealthComponent")
 sprite = NodePath("../Visuals/Sprite2D")
-hit_flash_material = SubResource("ShaderMaterial_4h56e")
+hit_flash_material = SubResource("ShaderMaterial_be2ip")
 
 [node name="Visuals" type="Node2D" parent="."]
 
