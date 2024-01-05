@@ -78,7 +78,7 @@ _data = {
 "walk": SubResource("Animation_wivs1")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_u6bvh"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fkdi2"]
 resource_local_to_scene = true
 shader = ExtResource("7_ox7tt")
 shader_parameter/lerp_percent = 0.0
@@ -116,7 +116,7 @@ sprite = NodePath("../Visuals/Sprite2D")
 [node name="HitFlashComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("6_koq8r")]
 health_component = NodePath("../HealthComponent")
 sprite = NodePath("../Visuals/Sprite2D")
-hit_flash_material = SubResource("ShaderMaterial_u6bvh")
+hit_flash_material = SubResource("ShaderMaterial_fkdi2")
 
 [node name="HitRandomAudioPlayer" parent="." instance=ExtResource("10_7n1st")]
 max_distance = 300.0

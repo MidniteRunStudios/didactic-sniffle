@@ -48,6 +48,7 @@ func check_deal_damage():
 	health_component.damage(1)
 	damage_interval_timer.start()
 	GameEvents.emit_player_damaged()
+	$HitRandomStreamPlayer.play_random()
 	print(health_component.current_health)
 
 func update_health_display():

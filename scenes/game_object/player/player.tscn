@@ -1,10 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://cgn1gtfb0023s"]
+[gd_scene load_steps=19 format=3 uid="uid://cgn1gtfb0023s"]
 
 [ext_resource type="Texture2D" uid="uid://o8s0xr8pxfn2" path="res://scenes/game_object/player/player.png" id="1_52vh5"]
 [ext_resource type="Script" path="res://scenes/game_object/player/player.gd" id="1_tvce7"]
 [ext_resource type="PackedScene" uid="uid://mqdpm46s6olk" path="res://scenes/component/health/health_component.tscn" id="2_kdt4q"]
 [ext_resource type="PackedScene" uid="uid://dfogvxhnarsdp" path="res://scenes/component/velocity/velocity_component.tscn" id="2_qeuls"]
 [ext_resource type="PackedScene" uid="uid://dx3jdxab4k7ga" path="res://scenes/ability/sword_ability_controller/sword_ability_controller.tscn" id="2_qf1a7"]
+[ext_resource type="PackedScene" uid="uid://c2wb2063q6se8" path="res://scenes/component/random_audio/random_audio_stream_player_2d_component.tscn" id="5_jbubc"]
+[ext_resource type="AudioStream" uid="uid://blrs03ld3sh1y" path="res://assets/audio/impactMining_000.ogg" id="6_2eb7a"]
+[ext_resource type="AudioStream" uid="uid://ddt0fsk16p1ng" path="res://assets/audio/impactMining_001.ogg" id="7_hgs0j"]
+[ext_resource type="AudioStream" uid="uid://dt6grvm25uutv" path="res://assets/audio/impactMining_002.ogg" id="8_lfvtc"]
+[ext_resource type="AudioStream" uid="uid://c8efwnt3r3wxw" path="res://assets/audio/impactMining_003.ogg" id="9_jo7av"]
+[ext_resource type="AudioStream" uid="uid://dr7nph76n430w" path="res://assets/audio/impactMining_004.ogg" id="10_rc52h"]
 
 [sub_resource type="Animation" id="Animation_ak1px"]
 length = 0.001
@@ -144,6 +150,9 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_2ehle")
 max_value = 1.0
 value = 0.5
 show_percentage = false
+
+[node name="HitRandomStreamPlayer" parent="." instance=ExtResource("5_jbubc")]
+streams = Array[AudioStream]([ExtResource("6_2eb7a"), ExtResource("7_hgs0j"), ExtResource("8_lfvtc"), ExtResource("9_jo7av"), ExtResource("10_rc52h")])
 
 [node name="PickupArea2D" type="Area2D" parent="."]
 position = Vector2(0, -6)

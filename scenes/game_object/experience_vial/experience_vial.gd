@@ -17,6 +17,7 @@ func on_area_entered(_other_area: Area2D):
 	tween.tween_property(sprite, "scale", Vector2.ZERO, 0.10).set_delay(0.40)
 	tween.chain()
 	tween.tween_callback(collect)
+	$RandomAudioStreamPlayer2DComponent.play_random()
 	
 func disable_collision():
 	collision_shape_2d.disabled = true
