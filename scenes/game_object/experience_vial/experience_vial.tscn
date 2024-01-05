@@ -16,7 +16,6 @@ radius = 16.0
 script = ExtResource("1_xfrsp")
 
 [node name="RandomAudioStreamPlayer2DComponent" parent="." instance=ExtResource("2_buh1m")]
-max_distance = 300.0
 streams = Array[AudioStream]([ExtResource("3_q8m2v"), ExtResource("4_ewc5q"), ExtResource("5_rd27h"), ExtResource("6_tf8j2"), ExtResource("7_ckbyu")])
 
 [node name="Area2D" type="Area2D" parent="."]
