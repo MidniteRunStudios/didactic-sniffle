@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://btcn1ss2bvuy3"]
+[gd_scene load_steps=9 format=3 uid="uid://btcn1ss2bvuy3"]
 
 [ext_resource type="Script" path="res://scenes/ui/end_screen.gd" id="1_qdwv2"]
 [ext_resource type="PackedScene" uid="uid://dgr0a12apr6ap" path="res://scenes/ui/sound_button.tscn" id="2_y8rov"]
+[ext_resource type="AudioStream" uid="uid://cnkvxb6xs1c31" path="res://assets/audio/jingles_HIT01.ogg" id="3_274f5"]
+[ext_resource type="AudioStream" uid="uid://brhs7h2c2u0cs" path="res://assets/audio/jingles_HIT15.ogg" id="4_067gi"]
 
 [sub_resource type="Animation" id="Animation_5bu1b"]
 length = 0.001
@@ -139,3 +141,13 @@ text = "Restart"
 unique_name_in_owner = true
 layout_mode = 2
 text = "Quit"
+
+[node name="VictoryStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_274f5")
+volume_db = -8.0
+bus = &"SFX"
+
+[node name="DefeatStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_067gi")
+volume_db = -8.0
+bus = &"SFX"
