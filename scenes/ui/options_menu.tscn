@@ -1,9 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://yj7nnmrsul0d"]
+[gd_scene load_steps=11 format=3 uid="uid://d14x7i75bytmd"]
 
 [ext_resource type="Script" path="res://scenes/ui/options_menu.gd" id="1_uxkex"]
 [ext_resource type="TileSet" uid="uid://cmvtg0eflkdqh" path="res://resources/tile_set.tres" id="2_k2fp1"]
-[ext_resource type="PackedScene" uid="uid://be7vcijk3wldm" path="res://scenes/ui/vingette.tscn" id="2_mi8sk"]
-[ext_resource type="PackedScene" uid="uid://dgr0a12apr6ap" path="res://scenes/ui/sound_button.tscn" id="3_1tcs0"]
+[ext_resource type="PackedScene" path="res://scenes/ui/vingette.tscn" id="2_mi8sk"]
+[ext_resource type="PackedScene" path="res://scenes/ui/sound_button.tscn" id="3_1tcs0"]
 [ext_resource type="PackedScene" uid="uid://by50ox20kpp8m" path="res://scenes/component/random_audio/random_stream_player_component.tscn" id="3_f7ktd"]
 [ext_resource type="AudioStream" uid="uid://di8t1ifbk05id" path="res://assets/audio/click1.ogg" id="4_qvoe6"]
 [ext_resource type="AudioStream" uid="uid://ctpfkqfinrd5j" path="res://assets/audio/click2.ogg" id="5_4x6w8"]
