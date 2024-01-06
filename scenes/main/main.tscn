@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://btcn1ss2bvuy3" path="res://scenes/ui/end_screen.tscn" id="2_8u43u"]
 [ext_resource type="PackedScene" uid="uid://b7suw2q7vifwa" path="res://scenes/manager/arena_time_manager/arena_time_manager.tscn" id="2_glp2s"]
 [ext_resource type="PackedScene" uid="uid://diljsca2o84d3" path="res://scenes/ui/experience_bar.tscn" id="2_kmw1b"]
-[ext_resource type="PackedScene" uid="uid://be7vcijk3wldm" path="res://scenes/ui/vingette.tscn" id="3_nf7pk"]
+[ext_resource type="PackedScene" path="res://scenes/ui/vingette.tscn" id="3_nf7pk"]
 [ext_resource type="PackedScene" uid="uid://b6i2s4x5rvvq" path="res://scenes/manager/experience_manager/experience_manager.tscn" id="4_1stsd"]
 [ext_resource type="PackedScene" uid="uid://batlth4adke62" path="res://scenes/manager/upgrade_manager/upgrade_manager.tscn" id="5_cva47"]
 
