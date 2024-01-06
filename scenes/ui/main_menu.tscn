@@ -62,4 +62,5 @@ layout_mode = 2
 text = "Quit"
 
 [node name="Vingette" parent="." instance=ExtResource("2_483jq")]
+process_mode = 3
 layer = 2
