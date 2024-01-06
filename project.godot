@@ -12,6 +12,7 @@ config_version=5
 
 config/name="2dsurvivorscourse"
 run/main_scene="res://scenes/ui/main_menu.tscn"
+config/custom_user_dir_name="2dsurvivorscourse"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
