@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b472nsmoqxdh"]
+[gd_scene load_steps=6 format=3 uid="uid://dri0xekx5c3qj"]
 
 [ext_resource type="Script" path="res://scenes/ui/pause_menu.gd" id="1_pgcv0"]
-[ext_resource type="PackedScene" path="res://scenes/ui/sound_button.tscn" id="3_gobk2"]
+[ext_resource type="PackedScene" uid="uid://dgr0a12apr6ap" path="res://scenes/ui/sound_button.tscn" id="3_gobk2"]
 
 [sub_resource type="Animation" id="Animation_6l467"]
 length = 0.001
