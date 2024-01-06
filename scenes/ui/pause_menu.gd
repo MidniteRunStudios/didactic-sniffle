@@ -43,6 +43,8 @@ func close():
 	queue_free()
 
 func on_options_pressed():
+	SceneTransition.transition()
+	await SceneTransition.transitioned_halfway
 	var option_menu_instance = options_menu_scene.instantiate()
 	add_child(option_menu_instance)
 	option_menu_instance.back_pressed.connect(on_options_back_pressed.bind(option_menu_instance))

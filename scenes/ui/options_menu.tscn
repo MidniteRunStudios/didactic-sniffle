@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://dvuhn3yr2gdt5" path="res://assets/audio/click5.ogg" id="8_c70o3"]
 
 [node name="OptionsMenu" type="CanvasLayer"]
+process_mode = 3
 layer = 2
 script = ExtResource("1_uxkex")
 
