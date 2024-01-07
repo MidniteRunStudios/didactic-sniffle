@@ -9,7 +9,7 @@ func _ready():
 	tween.tween_property(panel_container, "scale", Vector2.ONE,.3)\
 	.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
 	get_tree().paused = true
-	$%RestartButton.pressed.connect(on_restart_button_pressed)
+	$%ContinueButton.pressed.connect(on_continue_button_pressed)
 	$%QuitButton.pressed.connect(on_quit_button_pressed)
 
 func play_jingle(defeat: bool = false):
@@ -23,15 +23,12 @@ func set_defeat():
 	$%DescriptionLabel.text = "You lost!"
 	play_jingle(true)
 	
-func on_restart_button_pressed():
+func on_continue_button_pressed():
 	get_tree().paused = false
-	SceneTransition.transition()
-	await SceneTransition.transitioned_halfway
-	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
+	SceneTransition.transition_to_scene("res://scenes/ui/meta_menu.tscn")
 	
 func on_quit_button_pressed():
-	get_tree().paused = false
-	SceneTransition.transition()
+	SceneTransition.transition_to_scene("res://scenes/ui/main_menu.tscn")
 	await SceneTransition.transitioned_halfway
-	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")
+	get_tree().paused = false
 
