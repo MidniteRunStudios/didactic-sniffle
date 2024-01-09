@@ -27,42 +27,66 @@ layer_0/tile_data = PackedInt32Array(65533, 0, 4, 65534, 0, 4, 65535, 0, 4, 0, 0
 [node name="RandomSoundTestComponent" parent="." instance=ExtResource("3_pdtxm")]
 streams = Array[AudioStream]([ExtResource("4_cs2ck"), ExtResource("5_vwsxp"), ExtResource("6_xl0o6"), ExtResource("7_bk6iw"), ExtResource("8_rwaxs")])
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 2
+
+[node name="MetaUpgradeCard" parent="ScrollContainer/MarginContainer/GridContainer" instance=ExtResource("10_lqaq1")]
 layout_mode = 2
 
-[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="MetaUpgradeCard2" parent="ScrollContainer/MarginContainer/GridContainer" instance=ExtResource("10_lqaq1")]
+layout_mode = 2
+
+[node name="MetaUpgradeCard3" parent="ScrollContainer/MarginContainer/GridContainer" instance=ExtResource("10_lqaq1")]
+layout_mode = 2
+
+[node name="MetaUpgradeCard4" parent="ScrollContainer/MarginContainer/GridContainer" instance=ExtResource("10_lqaq1")]
+layout_mode = 2
+
+[node name="MetaUpgradeCard5" parent="ScrollContainer/MarginContainer/GridContainer" instance=ExtResource("10_lqaq1")]
+layout_mode = 2
+
+[node name="MetaUpgradeCard6" parent="ScrollContainer/MarginContainer/GridContainer" instance=ExtResource("10_lqaq1")]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+offset_right = 632.0
+offset_bottom = 360.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 16
+
+[node name="BackButton" type="Button" parent="MarginContainer2"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Back"
-
-[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_constants/h_separation = 16
-columns = 3
-
-[node name="MetaUpgradeCard" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("10_lqaq1")]
-layout_mode = 2
-
-[node name="MetaUpgradeCard2" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("10_lqaq1")]
-layout_mode = 2
-
-[node name="MetaUpgradeCard3" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("10_lqaq1")]
-layout_mode = 2
 
 [node name="Vingette" parent="." instance=ExtResource("10_p2x5e")]
 layer = 3
