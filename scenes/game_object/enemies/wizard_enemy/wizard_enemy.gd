@@ -8,7 +8,7 @@ var is_moving: bool = false
 func _ready():
 		$HurtBoxComponent.hit.connect(on_hit)
 
-func _process(delta):
+func _process(_delta):
 	if is_moving:
 		velocity_component.accelarate_to_player()
 	else:
