@@ -109,7 +109,8 @@ drop_percent = 0.3
 health_component = NodePath("../HealthComponent")
 
 [node name="VelocityComponent" parent="." instance=ExtResource("4_4mydb")]
-max_speed = 70
+max_speed = 100
+accelaration = 0.5
 
 [node name="DeathComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("5_mwbm8")]
 health_component = NodePath("../HealthComponent")

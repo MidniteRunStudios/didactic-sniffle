@@ -65,4 +65,4 @@ func on_arena_difficulty_increased(arena_difficulty: int):
 	if arena_difficulty == 6: #30 seconds
 		enemy_table.add_item(wizard_enemy_scene,20)
 	if arena_difficulty == 24: #2 minutes
-		enemy_table.add_item(bat_enemy_scene,8)
+		enemy_table.add_item(bat_enemy_scene,10)
