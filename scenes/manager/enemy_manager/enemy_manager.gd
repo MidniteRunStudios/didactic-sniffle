@@ -3,6 +3,7 @@ extends Node
 
 @export var basic_enemy_scene: PackedScene
 @export var wizard_enemy_scene: PackedScene
+@export var bat_enemy_scene: PackedScene
 @export var arena_time_manager: Node
 
 @onready var timer = $Timer
@@ -61,5 +62,7 @@ func on_arena_difficulty_increased(arena_difficulty: int):
 	timer.wait_time = base_spawn_time - time_off
 	print(time_off)
 	
-	if arena_difficulty == 6:
+	if arena_difficulty == 6: #30 seconds
 		enemy_table.add_item(wizard_enemy_scene,20)
+	if arena_difficulty == 24: #2 minutes
+		enemy_table.add_item(bat_enemy_scene,8)
