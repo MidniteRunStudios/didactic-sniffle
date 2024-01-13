@@ -28,7 +28,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(0, -6)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -58,7 +58,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 3)]
+"values": [Vector2(0, -10), Vector2(0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -109,8 +109,8 @@ drop_percent = 0.3
 health_component = NodePath("../HealthComponent")
 
 [node name="VelocityComponent" parent="." instance=ExtResource("4_4mydb")]
-max_speed = 100
-accelaration = 0.5
+max_speed = 200
+accelaration = 0.75
 
 [node name="DeathComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("5_mwbm8")]
 health_component = NodePath("../HealthComponent")
@@ -127,6 +127,8 @@ hit_flash_material = SubResource("ShaderMaterial_l2yg7")
 [node name="Visuals" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Visuals"]
+position = Vector2(0, -6)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("14_e1dxu")
 offset = Vector2(0, -8)
 

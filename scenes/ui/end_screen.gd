@@ -28,7 +28,7 @@ func on_continue_button_pressed():
 	SceneTransition.transition_to_scene("res://scenes/ui/meta_menu.tscn")
 	
 func on_quit_button_pressed():
+	get_tree().paused = false
 	SceneTransition.transition_to_scene("res://scenes/ui/main_menu.tscn")
 	await SceneTransition.transitioned_halfway
-	get_tree().paused = false
 

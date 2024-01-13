@@ -52,7 +52,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(0.5, 0.5)]
 }
 
 [sub_resource type="Animation" id="Animation_qjig5"]
@@ -94,7 +94,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
 "transitions": PackedFloat32Array(1, 1, 2.37841, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.5, 0.8), Vector2(0.9, 1.1)]
+"values": [Vector2(0.5, 0.5), Vector2(0.5, 0.5), Vector2(0.75, 0.4), Vector2(0.5, 0.611)]
 }
 tracks/3/type = "method"
 tracks/3/imported = false
@@ -126,10 +126,10 @@ shader = ExtResource("7_r8ptk")
 shader_parameter/lerp_percent = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ye68n"]
-radius = 8.0
+radius = 16.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_upa43"]
-radius = 4.0
+radius = 8.0
 
 [node name="WizardEnemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 8
@@ -137,10 +137,10 @@ collision_mask = 9
 script = ExtResource("1_vligd")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "walk"
 libraries = {
 "": SubResource("AnimationLibrary_gbkkq")
 }
+autoplay = "walk"
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_1pyyc")]
 max_health = 20.0
@@ -167,6 +167,7 @@ hit_flash_material = SubResource("ShaderMaterial_l2yg7")
 [node name="Visuals" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Visuals"]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_mcjsx")
 offset = Vector2(0, -8)
 
@@ -179,7 +180,6 @@ position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_ye68n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 light_mask = 0
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_upa43")
