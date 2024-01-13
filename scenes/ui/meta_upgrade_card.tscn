@@ -146,12 +146,14 @@ autowrap_mode = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 32)
 layout_mode = 2
+size_flags_vertical = 3
 theme_type_variation = &"BlueOutlineLabel"
 text = "Quick brown fox jumped over the lazy dog"
 autowrap_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 4
 
 [node name="TotalLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -189,10 +191,11 @@ mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/Control"]
 layout_mode = 2
-offset_left = -7.0
-offset_top = -5.0
-offset_right = 9.0
-offset_bottom = 11.0
+offset_left = -12.0
+offset_top = -13.0
+offset_right = 52.0
+offset_bottom = 51.0
+scale = Vector2(0.5, 0.5)
 size_flags_horizontal = 0
 size_flags_vertical = 0
 mouse_filter = 2
