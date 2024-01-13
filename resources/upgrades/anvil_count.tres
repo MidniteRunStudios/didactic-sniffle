@@ -6,5 +6,5 @@
 script = ExtResource("1_jf85w")
 id = "anvil_count"
 max_quantity = 3
-name = "Anvil Count"
-description = "Increases number of anvils by 1 per upgrade"
+name = "Boulder Count"
+description = "Increases number of boulders by 1 per upgrade"

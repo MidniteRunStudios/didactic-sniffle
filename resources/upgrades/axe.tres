@@ -8,5 +8,5 @@ script = ExtResource("1_bpgix")
 ability_controller_scene = ExtResource("1_kk7x0")
 id = "axe"
 max_quantity = 1
-name = "Axe"
-description = "Periodically spins an axe around the player"
+name = "Psychic Sword"
+description = "It has a mind of its own."

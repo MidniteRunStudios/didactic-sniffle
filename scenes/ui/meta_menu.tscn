@@ -58,9 +58,6 @@ columns = 2
 [node name="MetaUpgradeCard" parent="ScrollContainer/MarginContainer/GridContainer" instance=ExtResource("10_lqaq1")]
 layout_mode = 2
 
-[node name="DesciptionLabel" parent="ScrollContainer/MarginContainer/GridContainer/MetaUpgradeCard/MarginContainer/VBoxContainer" index="1"]
-text = "Quick brown fox jumped over the lazy dogQuick brown fox jumped over the lazy dog"
-
 [node name="MetaUpgradeCard2" parent="ScrollContainer/MarginContainer/GridContainer" instance=ExtResource("10_lqaq1")]
 layout_mode = 2
 
@@ -97,6 +94,3 @@ text = "Back"
 
 [node name="Vingette" parent="." instance=ExtResource("10_p2x5e")]
 layer = 3
-
-[editable path="ScrollContainer/MarginContainer/GridContainer/MetaUpgradeCard"]
-[editable path="ScrollContainer/MarginContainer/GridContainer/MetaUpgradeCard2"]

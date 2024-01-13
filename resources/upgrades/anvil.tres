@@ -8,5 +8,5 @@ script = ExtResource("2_yy7r4")
 ability_controller_scene = ExtResource("1_cnh1f")
 id = "Anvil"
 max_quantity = 1
-name = "Anvil"
-description = "Anvils fall from the sky"
+name = "Thundering Stomp"
+description = "Your rage brings the roof down"
