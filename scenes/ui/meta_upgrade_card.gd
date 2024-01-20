@@ -50,3 +50,4 @@ func update_progress():
 	total_count_label.text = "x%d" % current_quantity
 	if current_quantity == upgrade.max_quantity:
 		progress_label.text = "Maxed Out"
+		purchase_button.disabled = true
